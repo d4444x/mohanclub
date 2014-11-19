@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CLUUUB</title>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+                <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+</head>
+<body style="text-align: center">
+
+
+<h1><blink>CLUB</blink></h1>
+
+<div style="padding-bottom: 30px;padding-top: 30px">
+                <p id="swag1">Cant Handle my swag!!</p>
+                <p id="swag2">Cant Handle my swag!!</p>
+     <audio id="audio2" src=/static/skillex.wav></audio>
+        <script>
+            function play2() {
+    var audio = document.getElementById('audio2');
+    if (audio.paused) {
+        audio.play();
+    }else{
+        audio.currentTime = 0
+    }
+}
+        </script>
+
+                <a class="sriram" href="secret_chat"><img onmouseover="tempFlag=1;disco();play2()" onmouseout="tempFlag=0;" style ="display:inline-block" src="http://i.imgur.com/UX4Aleb.png" /></a></div>
+<br>sridoop aka modoop aka doop doop<br>
+<br>
+
+<script>
+                r=255;
+                g=255;
+                b=255;
+                flag=0;
+                t=new Array;
+                o=new Array;
+                d=new Array;
+                tempFlag=1;
+                var audio = document.getElementsByTagName("audio")[0];
+
+                function hex(a,c)
+                {
+                                t[a]=Math.floor(c/16)
+                                o[a]=c%16
+                                switch (t[a])
+                                {
+                                case 10:
+                                                t[a]='A';
+                                                break;
+                                case 11:
+                                                t[a]='B';
+                                                break;
+                                case 12:
+                                                t[a]='C';
+                                                break;
+                                case 13:
+                                                t[a]='D';
+                                                break;
+                                case 14:
+                                                t[a]='E';
+                                                break;
+                                case 15:
+                                                t[a]='F';
+                                                break;
+                                default:
+                                                break;
+                                }
+
+                                switch (o[a])
+                                {
+                                case 10:
+                                                o[a]='A';
+                                                break;
+                                case 11:
+                                                o[a]='B';
+                                                break;
+                                case 12:
+                                                o[a]='C';
+                                                break;
+                                case 13:
+                                                o[a]='D';
+                                                break;
+                                case 14:
+                                                o[a]='E';
+                                                break;
+                                case 15:
+                                                o[a]='F';
+                                                break;
+                                default:
+                                                break;
+                                }
+                }
+
+                function ran(a,c)
+                {
+                                if ((Math.random()>2/3||c==0)&&c<255)
+                                {
+                                                c++;
+                                                d[a]=2;
+                                }
+                                else
+                                {
+                                                if ((Math.random()<=1/2||c==255)&&c>0)
+                                                {
+                                                                                                                c--;
+                                                                                                                d[a]=1;
+                                                }
+                                                else d[a]=0;
+                                }
+                                return c
+                }
+
+                function do_it(a,c)
+                {
+                                if ((d[a]==2&&c<255)||c==0)
+                                {
+                                                c++;
+                                                d[a]=2;
+                                }
+                                else
+                                if ((d[a]==1&&c>0)||c==255)
+                                {
+                                                c--;
+                                                d[a]=1;
+                                }
+                                if (a==3)
+                                {
+                                                if (d[1]==0&&d[2]==0&&d[3]==0)
+                                                                flag=1;
+                                }
+                                return c
+                }
+
+                function disco()
+                {
+                                
+                                if (tempFlag==1){
+                                                audio.play();
+                                                $('#swag1').show();
+                                                $('#swag2').show();
+                                                if (flag==0)
+                                                {
+                                                                r=ran(1, r);
+                                                                g=ran(2, g);
+                                                                b=ran(3, b);
+                                                                hex(1,r);
+                                                                hex(2,g);
+                                                                hex(3,b);
+                                                                document.body.style.background="#"+t[1]+o[1]+t[2]+o[2]+t[3]+o[3];
+                                                                flag=50;
+                                                }
+                                                else
+                                                {
+                                                                r=do_it(1, r);
+                                                                g=do_it(2,g);
+                                                                b=do_it(3,b);
+                                                                hex(1,r);
+                                                                hex(2,g);
+                                                                hex(3,b);
+                                                                document.body.style.background="#"+t[1]+o[1]+t[2]+o[2]+t[3]+o[3];
+                                                                flag--;
+                                                }
+                                                setTimeout('disco()',0.01)
+                                } else {
+                                                $('#swag1').hide();
+                                                $('#swag2').hide();
+                                                document.body.style.background="#F0EAD6";
+                                                audio.currentTime = 0;
+                                                audio.pause();
+                                }
+                }
+</script>
+
+
+<style>
+    body{
+        background-color: #F0EAD6;
+        font-family: Ubuntu;
+    }
+    blink {
+  -webkit-animation: blink .5s step-end infinite;
+  animation: blink .5s step-end infinite
+}
+
+@-webkit-keyframes blink {
+  67% { opacity: 0 }
+}
+
+@keyframes blink {
+  67% { opacity: 0 }
+}
+
+#swag1 {
+                padding-left: 10px;
+                padding-top: 100px;
+                float: left;
+                -webkit-transform: rotate(-40deg);
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+                font-style: bold;
+                font-size: 40px;
+                display: none;
+}
+
+#swag2 {
+                float: right;
+                -webkit-transform: rotate(40deg);
+                padding-right: 10px;
+                padding-top: 100px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+                font-style: bold;
+                font-size: 40px;
+                display:none;
+}
+
+.sriram {
+
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    -webkit-animation:spin 3s linear infinite;
+    -moz-animation:spin 3s linear infinite;
+    animation:spin 3s linear infinite;
+}
+
+.sriram:hover
+{
+                -webkit-animation-name: thumb;
+                -webkit-animation-duration: 200ms;
+                -webkit-transform-origin:50% 50%;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes thumb {
+                0% { -webkit-transform: scale(1); }
+                50% { -webkit-transform: scale(0.5); }
+                100% { -webkit-transform: scale(1); }
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+</style>
+
+
+
+<h2>PROJECTS:</h2>
+<table style="width:100%;text-align: center">
+    <col width="50%" />
+    <col width="50%" />
+<tr>
+        <th>NAME</th>
+        <th>INFO</th>
+    </tr>
+<tr>
+        <td><a href="http://pokemon.mohan.club">PKEMON SHOOOWWWDOOOWWN</a></td>
+        <td>hadooop</td>
+    </tr>
+    </table>
+                
+<h2>ACTIVE MEMBERS:</h2>
+<table style="width:100%;text-align: center">
+
+    <col width="50%" />
+    <col width="50%" />
+    <tr>
+        <th>NAME</th>
+        <th>RANK</th>
+    </tr>
+    <tr>
+        <td>dardoop</td>
+        <td>king and lord aka pointtaker</td>
+    </tr>
+    <tr>
+        <td>jeffster aka master</td>
+        <td>pokemonmaster aka #62</td>
+    </tr>
+    <tr>
+        <td>d44444444444444444444x</td>
+        <td>scrb aka daxirohhhno aka spaaaalingmastr</td>
+    </tr>
+    <tr>
+        <td>frank</td>
+        <td>micrisfotaka franocphob</td>
+    </tr>
+    <tr>
+
+        <audio id="audio1" src=/static/francis.wav></audio>
+        <script>
+            function play() {
+    var audio = document.getElementById('audio1');
+    if (audio.paused) {
+        audio.play();
+    }else{
+        audio.currentTime = 0
+    }
+}
+        </script>
+        <td>shwingshwong</td>
+        <td><div onClick="play()">fRAAAANCIS</div></td>
+    </tr>
+    <tr>
+        <td>kddy</td>
+        <td>lvl 60 drumbledore</td>
+    </tr>
+    <tr>
+        <td>iswiiiiiic</td>
+        <td>thedone aka datmen aka bigike</td>
+    </tr>
+</table>
+</body>
+</html>
+{#LEEE ANYLATIX#}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56760026-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
